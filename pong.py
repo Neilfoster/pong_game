@@ -33,7 +33,7 @@ ball.color("white")
 ball.penup()
 ball.goto(0, 0)
 ball.dx = 2
-ball.dy = 2
+ball.dy = -2
 
 # Function
 def paddle_a_up():
@@ -76,3 +76,15 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
+
+    if ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy *= -1
+
+    if ball.xcor() > 390:
+        ball.goto(0, 0)
+        ball.dx *= -1
+
+    if ball.xcor() < -390:
+        ball.goto(0, 0)
+        ball.dx *= -1
